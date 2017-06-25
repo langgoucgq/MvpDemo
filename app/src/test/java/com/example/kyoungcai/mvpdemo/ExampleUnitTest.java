@@ -39,6 +39,9 @@ public class ExampleUnitTest {
     @Test
     public void testSave(){
         presenter.saveUser("11","11");
+        Mockito.verify(userModel).setName("11");
+//        Mockito.verify(userView).setName("11");
+        Mockito.verify(userModel).setSex("11");
     }
 
 }
