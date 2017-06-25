@@ -9,6 +9,7 @@ public class UserBean {
     private String sex;
 
     public UserBean() {
+
     }
 
     public UserBean(String name, String sex) {
