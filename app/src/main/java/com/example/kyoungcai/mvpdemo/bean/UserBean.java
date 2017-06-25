@@ -7,6 +7,7 @@ package com.example.kyoungcai.mvpdemo.bean;
 public class UserBean {
     private String name;
     private String sex;
+    private int age;
 
     public UserBean() {
     }
