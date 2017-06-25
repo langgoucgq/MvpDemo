@@ -34,7 +34,7 @@ public class ShareDaoTest {
     public void testAdd(){
         shareDao.put("key01","haha");
         String value=shareDao.get("key01");
-        Assert.assertEquals(value,"xixi");
+        Assert.assertEquals(value,"haha");
     }
 
 }
