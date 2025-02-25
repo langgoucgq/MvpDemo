@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Requirements:
+# - Java 11 or later (OpenJDK recommended)
+# - Android SDK (can be installed via Android Studio)
+
 # Check for Java
 if ! command -v java &> /dev/null; then
     echo "Error: Java is not installed. Please install OpenJDK 11 or later."
@@ -11,12 +15,6 @@ fi
 # Set JAVA_HOME if not already set
 if [ -z "$JAVA_HOME" ] && [ -x /usr/bin/java ]; then
     export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
-fi
-
-# Download and install Google Java Format
-mkdir -p tools
-if [ ! -f tools/google-java-format.jar ]; then
-  curl -L https://github.com/google/google-java-format/releases/download/v1.17.0/google-java-format-1.17.0-all-deps.jar -o tools/google-java-format.jar
 fi
 
 # Make Gradle wrapper executable

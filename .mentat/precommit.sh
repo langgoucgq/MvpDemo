@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Requirements:
+# - Java 11 or later (OpenJDK recommended)
+# - Android SDK (can be installed via Android Studio)
+
 # Check for Java
 if ! command -v java &> /dev/null; then
     echo "Error: Java is not installed. Please install OpenJDK 11 or later."
@@ -15,9 +19,6 @@ fi
 
 # Make Gradle wrapper executable
 chmod +x ./gradlew
-
-# Format Java code
-find . -name "*.java" -not -path "./build/*" -not -path "./app/build/*" -exec java -jar tools/google-java-format.jar --replace {} \;
 
 # Run Android lint
 ./gradlew --no-daemon lint
