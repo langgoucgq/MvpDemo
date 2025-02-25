@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Set JAVA_HOME if not already set
+if [ -z "$JAVA_HOME" ]; then
+    export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
+fi
+
 # Make Gradle wrapper executable
 chmod +x ./gradlew
 

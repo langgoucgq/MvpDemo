@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Install OpenJDK 11
+if ! command -v java &> /dev/null; then
+    sudo apt-get update
+    sudo apt-get install -y openjdk-11-jdk
+fi
+
+# Set JAVA_HOME
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
+
 # Download and install Google Java Format
 mkdir -p tools
 if [ ! -f tools/google-java-format.jar ]; then
